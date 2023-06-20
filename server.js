@@ -4,13 +4,13 @@ const express = require("express") //import express lib
 const morgan = require("morgan") //import morgan lib
 const PORT = process.env.PORT //get port from .env file
 const app = express() //express appliation object
-
-// NEEDS TO BE CHANGED FOR POKEMON
-//const fruits = require("../models/fruits.js") // import fruits data
+const methodOverride = require("method-override") // import middleware for overriding for PUTS and DELETES
+const pokemon = require("./models/pokemon.js") // import pokemon data
 
 // MIDDLEWARE
 app.use(morgan("dev"))
-// app.use(express.static("public")) -- consider using
+app.use(express.static("public"))
+app.use(methodOverride("_method")) // method will be overriden when it sees a query string like ?_method="put"
 // app.use(express.urlencoded({extended: false})) -- might need later
 
 
