@@ -9,8 +9,15 @@
   </head>
   
   <body>
-    <h1>name: <%= pokemon.name %></h1>
-    
+    <h1>Name: <%= pokemon.name %></h1>
+    <ul> Stats:
+        <ul>
+            <li>HP: <%= pokemon.stats.hp %></li>
+            <li>Attack: <%= pokemon.stats.attack %></li>
+            <li>Defense: <%= pokemon.stats.defense %></li>
+            <li>Speed: <%= pokemon.stats.speed %></li>
+        <ul>
+    </ul>
     <h3><a href="/pokemon">GO BACK TO POKEDEX</a></h3>
   </body>
 </html>
