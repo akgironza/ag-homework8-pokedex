@@ -12,13 +12,13 @@
 
     <!-- <a href="/fruit/new"><button>Create New Fruit</button></a> -->
     
-    <p>
-        <% for(let i = 0; i < pokemon.length; i++){ %>
+    <ul></ul>
+        <% for(let i = 0; i < pokemons.length; i++){ %>
 
-            <a href="/pokemon/<%= i %>"><%= pokemon[i].name %></a>
+            <a href="/pokemon/<%= i %>"><li><%= pokemons[i].name %></li></a>
 
         <% } %>
-    </p>
+    </ul>
     
 </body>
 </html>
