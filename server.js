@@ -15,6 +15,9 @@ app.use(methodOverride("_method")) // method will be overriden when it sees a qu
 
 
 // ROUTES
+app.get("/pokemon", (req, res) => {
+    res.render("index.ejs", {pokemon})
+})
 
 
 // LISTENER
