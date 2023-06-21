@@ -22,15 +22,41 @@ app.get("/pokemon", (req, res) => {
 })
 
 // NEW - GET - show form to create new pokemon
+app.get("/pokemon/new", (req, res) => {
+    res.render("new.ejs")
+})
 
 
 // DESTROY - DELETE - delete a pokemon
+app.delete("/:id", (req, res) => {
+    const id = req.params.id
+    // splice the object out of the array
+    pokemon.splice(id, 1)
+    // redirect user back to index page
+    res.redirect("/pokemon")
+})
+
 
 // UPDATE - PUT - update a pokemon
+app.put("/:id", (req, res) => {
+    const id = req.params.id
+    pokemons[id] = req.body
+    res.redirect("/pokemon")
+})
 
 // CREATE - POST - create a pokemon
+app.post("/pokemon", (req, res) => {
+    pokemon.push(req.body)
+    res.redirect("/pokemon")
+})
 
 // EDIT - GET - render form to update a pokemon
+app.get("/pokemon/:id/edit", (req, res) => {
+    const id = req.params.id
+    const pokemon = pokemons[id]
+    res.render("edit.ejs", {pokemon, id})
+})
+
 
 // SHOW - GET - shows one pokemon
 app.get("/pokemon/:id", (req, res) => {
