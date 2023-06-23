@@ -11,7 +11,7 @@ const pokemons = require("./models/pokemon.js") // import pokemon data
 app.use(morgan("dev"))
 app.use(express.static("public"))
 app.use(methodOverride("_method")) // method will be overriden when it sees a query string like ?_method="put"
-// app.use(express.urlencoded({extended: false})) -- might need later
+app.use(express.urlencoded({extended: false}))
 
 
 // ROUTES ROUTES ROUTES ROUTES ROUTES
@@ -46,7 +46,7 @@ app.put("/:id", (req, res) => {
 
 // CREATE - POST - create a pokemon
 app.post("/pokemon", (req, res) => {
-    pokemon.push(req.body)
+    pokemons.push(req.body)
     res.redirect("/pokemon")
 })
 
