@@ -38,7 +38,7 @@ app.delete("/:id", (req, res) => {
 
 
 // UPDATE - PUT - update a pokemon
-app.put("/:id", (req, res) => {
+app.put("/pokemon/:id", (req, res) => {
     const id = req.params.id
     pokemons[id] = req.body
     res.redirect("/pokemon")
