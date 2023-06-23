@@ -9,15 +9,14 @@
 </head>
 <body>
     <h1>A Pokedex App</h1>
-
-    <a href="/pokemon/new"><button>Create New Pokemon</button></a>
     
-    <ul>
-        <ul>
+    <ul class="pokemons">
             <% for(let i = 0; i < pokemons.length; i++){ %>
-                <a href="/pokemon/<%= i %>"><li><img src="<%= pokemons[i].img %>" alt="<%= pokemons[i].name %>"><br><%= pokemons[i].name %></li></a>
+                <a href="/pokemon/<%= i %>"><li class="index-names"><img src="<%= pokemons[i].img %>" alt="<%= pokemons[i].name %>"><br><%= pokemons[i].name %></li></a>
             <% } %>
     </ul>
+
+    <a href="/pokemon/new"><button>Create New Pokemon</button></a>
     
 </body>
 </html>
