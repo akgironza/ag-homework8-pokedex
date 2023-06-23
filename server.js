@@ -26,12 +26,11 @@ app.get("/pokemon/new", (req, res) => {
     res.render("new.ejs")
 })
 
-
 // DESTROY - DELETE - delete a pokemon
-app.delete("/:id", (req, res) => {
+app.delete("/pokemon/:id", (req, res) => {
     const id = req.params.id
     // splice the object out of the array
-    pokemon.splice(id, 1)
+    pokemons.splice(id, 1)
     // redirect user back to index page
     res.redirect("/pokemon")
 })
