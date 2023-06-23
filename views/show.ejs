@@ -11,14 +11,16 @@
   <body>
     <h1>Name: <%= pokemon.name %></h1>
     <img src ="<%= pokemon.img %>">
-    <ul> Stats:
-        <ul>
-            <li>HP: <%= pokemon.stats.hp %></li>
-            <li>Attack: <%= pokemon.stats.attack %></li>
-            <li>Defense: <%= pokemon.stats.defense %></li>
-            <li>Speed: <%= pokemon.stats.speed %></li>
-        <ul>
-        <li></li>
+    <ul>
+      <li>Type: <%= pokemon.type %></li>
+      <li>Stats:</li><ul>
+        <li>HP: <%= pokemon.stats.hp %></li>
+        <li>Attack: <%= pokemon.stats.attack %></li>
+        <li>Defense: <%= pokemon.stats.defense %></li>
+        <li>Speed: <%= pokemon.stats.speed %></li>
+        </ul>
+      <li>Abilities, normal: <%= pokemon.misc.abilities.normal %></li>
+      <li>Abilities, hidden: <%= pokemon.misc.abilities.hidden %></li>
     </ul>
     <a href="/pokemon/<%= id %>/edit"><button>Edit</button></a>
     <form action="/pokemon/<%= id %>?_method=DELETE" method="post">

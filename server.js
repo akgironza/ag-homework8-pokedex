@@ -54,6 +54,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
     const id = req.params.id
     const pokemon = pokemons[id]
     res.render("edit.ejs", {pokemon, id})
+    res.return = pokemon
 })
 
 
